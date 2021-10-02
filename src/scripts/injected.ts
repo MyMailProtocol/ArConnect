@@ -274,14 +274,4 @@ window.addEventListener("message", (e) => {
 window.arweaveWallet = WalletAPI;
 dispatchEvent(new CustomEvent("arweaveWalletLoaded", { detail: {} }));
 
-declare global {
-  interface Window {
-    arweaveWallet: typeof WalletAPI;
-  }
-  interface WindowEventMap {
-    walletSwitch: CustomEvent<{ address: string }>;
-    arweaveWalletLoaded: CustomEvent<{}>;
-  }
-}
-
 export {};
