@@ -45,7 +45,7 @@ const WalletAPI = {
         appInfo
       });
       document.body.removeChild(requestPermissionOverlay);
-    } catch (e) {
+    } catch (e: any) {
       if (document.body.contains(requestPermissionOverlay))
         document.body.removeChild(requestPermissionOverlay);
 
@@ -61,7 +61,7 @@ const WalletAPI = {
       });
 
       if (!data.res) throw new Error(data.message);
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -75,7 +75,7 @@ const WalletAPI = {
       if (!data.res) throw new Error(data.message);
 
       return data.address as string;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -89,7 +89,7 @@ const WalletAPI = {
       if (!data.res) throw new Error(data.message);
 
       return data.publicKey as string;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -103,7 +103,7 @@ const WalletAPI = {
       if (!data.res) throw new Error(data.message);
 
       return data.addresses as string[];
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -117,7 +117,7 @@ const WalletAPI = {
       if (!data.res) throw new Error(data.message);
 
       return data.names;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -130,7 +130,7 @@ const WalletAPI = {
         id
       });
       if (!data.res) throw new Error(data.message);
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -166,7 +166,7 @@ const WalletAPI = {
       } else {
         return decodeTransaction;
       }
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -179,7 +179,7 @@ const WalletAPI = {
       });
       if (!data.permissions) throw new Error(data.message);
       return data.permissions;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -192,7 +192,7 @@ const WalletAPI = {
       });
       if (!data.config) throw new Error(data.message);
       return data.config;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -214,7 +214,7 @@ const WalletAPI = {
       });
       if (!result.res || !result.data) throw new Error(result.message);
       return new Uint8Array(Object.values(result.data));
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -236,7 +236,7 @@ const WalletAPI = {
       });
       if (!result.res || !result.data) throw new Error(result.message);
       return result.data;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   },
@@ -251,7 +251,7 @@ const WalletAPI = {
       });
       if (!result.res || !result.data) throw new Error(result.message);
       return result.data;
-    } catch (e) {
+    } catch (e: any) {
       throw new Error(e);
     }
   }
