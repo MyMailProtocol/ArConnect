@@ -22,7 +22,7 @@ esbuild
     sourcemap: process.env.NODE_ENV !== "production",
     watch: process.env.NODE_ENV !== "production",
     inject: ["./src/utils/polyfill.js"],
-    target: ["chrome58", "firefox57"],
+    target: ["chrome63", "firefox57"],
     outdir: "./public/build",
     define: {
       global: "window"
